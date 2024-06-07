@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="" defaultVersion="current" defaultWorkgroup="" url="http://hl7.org/fhir/uv/multiauth">
+<version code="current" url=""/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="CodeSystem/smart-auth-information-CodeSystem" key="CodeSystem-smart-auth-information-CodeSystem" name="Codes for SMART authorization"/>
+<artifact id="Endpoint/EpicSandboxEndpoint" key="Endpoint-EpicSandboxEndpoint" name="EpicSandboxEndpoint"/>
+<artifact id="Organization/EpicSandboxOrganization" key="Organization-EpicSandboxOrganization" name="EpicSandboxOrganization"/>
+<artifact id="StructureDefinition/ExtendedUserAccessBrand" key="StructureDefinition-ExtendedUserAccessBrand" name="ExtendedUserAccessBrand"/>
+<artifact id="StructureDefinition/ExtendedUserAccessEndpoint" key="StructureDefinition-ExtendedUserAccessEndpoint" name="ExtendedUserAccessEndpoint"/>
+<artifact id="ValueSet/smart-grant-types" key="ValueSet-smart-grant-types" name="Grant types supported by SMART-on-FHIR"/>
+<artifact id="Endpoint/ImagingSandboxEndpoint" key="Endpoint-ImagingSandboxEndpoint" name="ImagingSandboxEndpoint"/>
+<artifact id="Organization/ImagingSandboxOrganization" key="Organization-ImagingSandboxOrganization" name="ImagingSandboxOrganization"/>
+<artifact id="StructureDefinition/MyPatient" key="StructureDefinition-MyPatient" name="MyPatient"/>
+<artifact id="StructureDefinition/extended-smart-launch-conformance" key="StructureDefinition-extended-smart-launch-conformance" name="New SMART launch conformance definition"/>
+<artifact id="Patient/PatientExample" key="Patient-PatientExample" name="PatientExample"/>
+<artifact id="StructureDefinition/smart-launch-conformance-original" key="StructureDefinition-smart-launch-conformance-original" name="SMART launch conformance definition"/>
+<artifact id="ValueSet/SmartCapabilities" key="ValueSet-SmartCapabilities" name="Smart Capabilities"/>
+<artifact id="ValueSet/smart-token-endpoint-auth-methods" key="ValueSet-smart-token-endpoint-auth-methods" name="Smart Token Endpoint Auth Methods supported by SMART-on-FHIR"/>
+<artifact id="StructureDefinition/SmartAuthInformation" key="StructureDefinition-SmartAuthInformation" name="SmartAuthInformation"/>
+<artifact id="Bundle/UserBrandBundle" key="Bundle-UserBrandBundle" name="UserBrandBundle"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page key="analysis" name="Analysis"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page key="brand-based-discovery" name="Brand based discovery"/>
+<page key="index" name="Multi Server Authentication"/>
+<page key="patient-app" name="Patient facing apps"/>
+<page key="requirements" name="Requirements"/>
+<page key="toc" name="Table of Contents"/>
+<page key="vendor-app" name="Vendor facing apps"/>
+</specification>

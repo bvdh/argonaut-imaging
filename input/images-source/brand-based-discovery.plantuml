@@ -1,0 +1,22 @@
+@startuml
+participant "Vendor\nApp" as VendorApp
+box EHR
+    participant  "EHR\nFHIR" as EhrFHIR
+    participant  "EHR\nAS" as EhrAS
+    participant  "Brand\nProvider" as BrandProvider
+end box
+
+VendorApp -> EhrFHIR ++: <iss>/.wellknown/smart-configuration
+VendorApp <-- EhrFHIR --: <configuration>
+    note left
+        <auth-endpoint>
+        <token-endpoint>
+        <user_access_brand_endpoint>
+        <user_access_brand_identifier>
+    end note
+VendorApp -> BrandProvider: GET <user_access_brand_endpoint>
+note over BrandProvider
+    search for Endpoint 
+    GET Organization?type=|imaging&_include=Organization::endpoint
+end note
+@enduml
