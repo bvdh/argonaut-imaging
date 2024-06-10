@@ -4,7 +4,7 @@ Using token-exchange (see [RFC8693](https://www.rfc-editor.org/rfc/rfc8693.html)
 
 #### Approach
 
-The approach taken in this flow is the same as a normal SMART launch. The application detects both servers and determines that access-token-reuse is possibe and what scopes are supported by each server. It then sends out a request that contains the total list of scopes.
+The approach taken in this flow is the same as a normal SMART launch. The application detects both servers and determines that access-token-reuse is possible and what scopes are supported by each server. It then sends out a request that contains the total list of scopes.
 
 This approach does not include a new step in which the user is requested to approve the application having access to the data of the other server. This makes it a solution that might work for vendor apps but not for patient facing apps.
 
@@ -25,11 +25,11 @@ Signalling a FHIR server supports token exchange with an open-id or access-token
 
 ##### Determine open-id/access-tokens that are accepted
 
-This could be done in several ways. It could be pre-configured and determined out of bounds. In which case additional specificat is required. This is an option as, as is stated above, token-exchange is most likely used for vendor-facing applications.
+This could be done in several ways. It could be pre-configured and determined out of bounds. In which case additional specification is required. This is an option as, as is stated above, token-exchange is most likely used for vendor-facing applications.
 
 Alternatively, the authorization server could be indicated in the `conformance.authorization_endpoint`. This will work if the server only accepts tokens from one such server (the field is 0..1). In the case the resource server accepts both normal OAuth flows as well as token exchange, this will not suffice. It is also not completely correct as it points to the authorization not token-endpoint and the open-id token is issued as part of the retrieve access token flow.
 
-Open-id conncet has specified a discovery mechanism in [OpenID Connect Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html). This relies on [RFC7033-webfinger](https://www.rfc-editor.org/rfc/rfc7033.html#section-3.1). This is similar to SMART's discovery mechanism and providers information on the OpenId provider, not about the supported open-id tokens.
+Open-id connect has specified a discovery mechanism in [OpenID Connect Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html). This relies on [RFC7033-webfinger](https://www.rfc-editor.org/rfc/rfc7033.html#section-3.1). This is similar to SMART's discovery mechanism and providers information on the OpenId provider, not about the supported open-id tokens.
 
 We could add a entry to conformance listing the supported access-token and open-id provider discovery endpoints or add them to the `associated_endpoint` list. The latter approach is used. The capability used to indicate token-exchange support will be the same as is used in the capability list: `token-exchange-openid` and `token-exchange-openid`.
 
@@ -37,7 +37,7 @@ We could add a entry to conformance listing the supported access-token and open-
 
 When using token-exchange using access-tokens, the patient id can be retrieved using introspection. That would not work for open-id based token-exchange. Passing access-tokens is a security vulnerability should be avoided if possible.
 
-There are different ways to address this issue. The first one is to limit token-exchange to scenerio's where only a `system` and `user` specific scopes are supported; `patient` specific scopes are refused or translated into `system` and `user` specific scopes.
+There are different ways to address this issue. The first one is to limit token-exchange to scenario's where only a `system` and `user` specific scopes are supported; `patient` specific scopes are refused or translated into `system` and `user` specific scopes.
 
 Alternatively, the current patient could be encoded in the open-id token, although this is contrary to what the token represents.
 

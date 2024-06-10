@@ -5,11 +5,11 @@ This approach can work for scenario's where multiple servers are governed by the
 One approach requires the patient id to be aligned on all servers which provides a very strong coupling between servers. This should not be the preferred solution. Referring to single FHIR server for patients might work (other servers use full url references).
 
 For servers that are used by multiple EHR's this might even be impossible unless a specific proxy is provided.
-The EHR authorizes access to other resource servers. From a security perspective this is seen as unacceptable if those servers are governed by a differnet Authorization Server.
+The EHR authorizes access to other resource servers. From a security perspective this is seen as unacceptable if those servers are governed by a different Authorization Server.
 
 #### Approach
 
-The approach taken in this flow is the same as a normal SMART launch. The application detects both servers and determines that access-token-reuse is possibe and what scopes are supported by each server. It then sends out a request that contains the total list of scopes.
+The approach taken in this flow is the same as a normal SMART launch. The application detects both servers and determines that access-token-reuse is possible and what scopes are supported by each server. It then sends out a request that contains the total list of scopes.
 
 ##### Signal request for multiple servers
 
@@ -72,7 +72,7 @@ The typical launch flow is presented below.
 
 [RFC6749](https://www.rfc-editor.org/rfc/rfc6749.html)
 
-Changes requried in the SMART application launch specification.
+Changes required in the SMART application launch specification.
 
 **CHANGE**: Allow multiple aud's in the [Obtain authorization code](https://hl7.org/fhir/smart-app-launch/app-launch.html#obtain-authorization-code) call.
 

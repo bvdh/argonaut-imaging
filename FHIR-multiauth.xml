@@ -15,6 +15,7 @@
 <artifact id="StructureDefinition/MyPatient" key="StructureDefinition-MyPatient" name="MyPatient"/>
 <artifact id="StructureDefinition/extended-smart-launch-conformance" key="StructureDefinition-extended-smart-launch-conformance" name="New SMART launch conformance definition"/>
 <artifact id="Patient/PatientExample" key="Patient-PatientExample" name="PatientExample"/>
+<artifact id="StructureDefinition/smart-launch-obtain-authorization-requrest-original" key="StructureDefinition-smart-launch-obtain-authorization-requrest-original" name="SMART launch authorization request"/>
 <artifact id="StructureDefinition/smart-launch-conformance-original" key="StructureDefinition-smart-launch-conformance-original" name="SMART launch conformance definition"/>
 <artifact id="ValueSet/SmartCapabilities" key="ValueSet-SmartCapabilities" name="Smart Capabilities"/>
 <artifact id="ValueSet/smart-token-endpoint-auth-methods" key="ValueSet-smart-token-endpoint-auth-methods" name="Smart Token Endpoint Auth Methods supported by SMART-on-FHIR"/>

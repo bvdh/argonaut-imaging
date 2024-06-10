@@ -48,7 +48,10 @@ App -> App: detect OtherFhir supports token-exchange\nand EHR can be used.
 
 === Request EHR Authorization code ==
 EhrAS <- App --: OPEN authorize
-    note right: scope: [ .., openid, ...]
+    note right
+     scope: [ .., openid, ...]
+     clientId: <ehr-clientid>
+    end note
     activate EhrAS
     group login required
         note over EhrAS: login
@@ -66,18 +69,27 @@ App <-- EhrAS --: <ehr-token-response>
 note left
     token-response:
         <ehr-access-token>
-        <ehr-open-id-token> (with patient)
+        <ehr-launch-token> (with patient)
+        <ehr-open-id-token>
         <ehr-patient-id>
         <ehr-practitioner-id>
 end note
 
 === Request Other Access token ==
-App -> OtherAS ++: retrieve-token( <openid-token> )
+App -> OtherAS ++: retrieve-token( <launch-token> )
 note right
+    clientId: <other-clientid>
     grant_type = urn:ietf:params:oauth:grant-type:token-exchange
-    subject_token = <open-id-token>
+    subject_token = <launch-token>
     subject_token_type= urn:ietf:params:oauth:token-type:id_token
 end note
+OtherAS ->  EhrAS ++: introspect <launch-token> [backend-token]
+OtherAS <-- EhrAS --
+note right: <patient-id> <user>
+OtherAS -> EhrAS: GET patient [backend-token]
+OtherAS -> EhrAS: GET user [backend-token]
+OtherAS -> OtherFHIR: determine matching patient 
+OtherAS -> OtherFHIR: determine matching user
 App <-- OtherAS --: <ehr-token-response>
 note left
     token-response:

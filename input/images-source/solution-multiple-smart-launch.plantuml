@@ -65,20 +65,20 @@ App <-- EhrAS --: <ehr-token-response>
 note left
     token-response:
         <ehr-access-token>
-        <ehr-open-id-token> (with patient)
+        <ehr-launch-token> (with patient)
+        <ehr-open-id-token> 
         <ehr-patient-id>
         <ehr-practitioner-id>
 end note
 
 === Request Other Authorization code ==
 
-OtherAS <- App --: OPEN authorize
+OtherAS <- App --: OPEN authorize <ehr-launch-token>
     activate OtherAS
-    note right
-        response_type: code
-        aud: iss1
-        aud: iss2
-    end note
+    
+    
+    OtherAs -> EhrAS: introspect <ehr-launch-token>
+    
     group user interaction
         note over OtherAS: detect user is logged in
         note over OtherAS: show scopes

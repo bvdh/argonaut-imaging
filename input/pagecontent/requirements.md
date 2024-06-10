@@ -20,7 +20,7 @@ Application (Patient and Vendor) launches against EHR, discovers and connects to
 
 1. REQ: Patient App launches from EHR and discovers other FHIR servers
 2. REQ: Patient Web app authorizes with EHR and connects to other FHIR server
-3. REQ: Patient App shows as part of launch process the information the user authorizes the application to access
+3. REQ: Patient App shows, as part of launch process, the information the user authorizes the application to access. This has to be done securely.
 
 ### Vendor App requirements
 
